@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Pronto::Rubocop::OffenseLine do
+describe Pronto::Standardrb::OffenseLine do
   let(:offense_line) { described_class.new(patch_cop, offense, line) }
-  let(:patch_cop) { instance_double Pronto::Rubocop::PatchCop, runner: runner }
+  let(:patch_cop) { instance_double Pronto::Standardrb::PatchCop, runner: runner }
   let(:runner) do
-    instance_double Pronto::Rubocop, pronto_rubocop_config: config
+    instance_double Pronto::Standardrb, pronto_rubocop_config: config
   end
   let(:offense) do
     instance_double RuboCop::Cop::Offense,

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Pronto::Rubocop::PatchCop do
+describe Pronto::Standardrb::PatchCop do
   let(:patch_cop) { described_class.new(patch, runner) }
   let(:patch) do
     double :patch, new_file_full_path: 'example.rb', added_lines: [line]
@@ -15,7 +15,7 @@ describe Pronto::Rubocop::PatchCop do
   before do
     allow(RuboCop::ProcessedSource).to receive(:from_file) { processed_source }
     allow(RuboCop::Cop::Team).to receive(:new) { team }
-    allow(Pronto::Rubocop::OffenseLine).to receive(:new) { offense_line }
+    allow(Pronto::Standardrb::OffenseLine).to receive(:new) { offense_line }
   end
 
   describe '#processed_source' do

@@ -1,10 +1,11 @@
 require 'pronto'
 require 'rubocop'
-require 'pronto/rubocop/patch_cop'
-require 'pronto/rubocop/offense_line'
+require 'standard'
+require 'pronto/standardrb/patch_cop'
+require 'pronto/standardrb/offense_line'
 
 module Pronto
-  class Rubocop < Runner
+  class Standardrb < Runner
     def run
       ruby_patches
         .select { |patch| patch.additions > 0 }

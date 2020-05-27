@@ -1,6 +1,6 @@
 require 'rspec'
 require 'rspec/its'
-require 'pronto/rubocop'
+require 'pronto/standardrb'
 
 RSpec.shared_context 'test repo' do
   # To make changes to the fixture repository, you can rename the `git` folder

@@ -1,5 +1,5 @@
 module Pronto
-  class Rubocop < Runner
+  class Standardrb < Runner
     class OffenseLine
       def initialize(patch_cop, offense, line)
         @patch_cop = patch_cop
@@ -8,7 +8,7 @@ module Pronto
       end
 
       def message
-        Message.new(path, line, level, message_text, nil, Pronto::Rubocop)
+        Message.new(path, line, level, message_text, nil, Pronto::Standardrb)
       end
 
       private

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 module Pronto
-  describe Rubocop do
-    let(:rubocop) { Rubocop.new(patches) }
+  describe Standardrb do
+    let(:rubocop) { Standardrb.new(patches) }
     let(:patches) { nil }
     let(:pronto_config) do
       instance_double Pronto::ConfigFile, to_h: config_hash
@@ -63,9 +63,7 @@ module Pronto
             .to match(
               [
                 a_string_matching('Inconsistent indentation detected'),
-                a_string_matching('Prefer single-quoted strings'),
                 a_string_matching('Inconsistent indentation detected'),
-                a_string_matching('Prefer single-quoted strings')
               ]
             )
         end

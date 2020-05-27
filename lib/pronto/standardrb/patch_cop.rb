@@ -1,5 +1,5 @@
 module Pronto
-  class Rubocop < Runner
+  class Standardrb < Runner
     class PatchCop
       attr_reader :runner
 
@@ -31,10 +31,9 @@ module Pronto
       end
 
       def rubocop_config
-        @rubocop_config ||= begin
-          store = ::RuboCop::ConfigStore.new
-          store.for(path)
-        end
+        config = Standard::BuildsConfig.new.call([])
+
+        @rubocop_config ||= config.rubocop_config_store.for(path)
       end
 
       private
